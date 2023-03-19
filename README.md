@@ -26,8 +26,9 @@ CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
 _fill each filed with your info respectively_
-# E-commerce_Website
-# ecom
-"# E-commerce_Website" 
-"# ec" 
-"# ec" 
+## E-commerce
+<ul> Developed RESTful API using Node.js and Express.js for spam-blocking web application with MySQL database,
+empowering users to report and search spam numbers.</ul> 
+<ul>  Implemented robust user authentication, ensuring 100% protection against unauthorized access.</ul> 
+<ul>  Engineered search functionality to facilitate efficient contact search by name or phone number, resulting in 30%
+surge in user engagement and 25% increase in user retention.</ul> 
