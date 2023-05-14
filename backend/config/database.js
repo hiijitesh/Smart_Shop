@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const connectDatabase = () => {
 	mongoose
@@ -8,8 +8,10 @@ const connectDatabase = () => {
 			useCreateIndex: true,
 		})
 		.then((data) => {
-			console.log(`Mongodb connected with server: ${data.connection.host}`);
-		});
-};
+			console.log(
+				`Mongodb connected with server: ${data.connection.host}`
+			)
+		})
+}
 
-module.exports = connectDatabase;
+module.exports = connectDatabase
