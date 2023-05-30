@@ -9,7 +9,9 @@ exports.connectDatabase = () => {
 			useCreateIndex: true,
 		})
 		.then((con) =>
-			console.log(`Database Connected to E-Commerce Collection ✅✅✅ `)
+			console.log(
+				`Database Connected to the E-Commerce Collection ✅✅✅ `
+			)
 		)
 		.catch((err) => console.log(err))
 }

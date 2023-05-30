@@ -7,7 +7,7 @@ const crypto = require("crypto")
 const cloudinary = require("cloudinary")
 
 // Register a User
-exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+exports.registerUser = catchAsyncErrors(async (req, res) => {
 	const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
 		folder: "avatars",
 		width: 150,
@@ -34,7 +34,6 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 	const { email, password } = req.body
 
 	// checking if user has given password and email both
-
 	if (!email || !password) {
 		return next(new ErrorHander("Please Enter Email & Password", 400))
 	}
@@ -50,7 +49,6 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 	if (!isPasswordMatched) {
 		return next(new ErrorHander("Invalid email or password", 401))
 	}
-
 	sendToken(user, 200, res)
 })
 
