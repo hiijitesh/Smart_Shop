@@ -1,17 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 
-const connectDatabase = () => {
+mongoose.set("strictQuery", true)
+exports.connectDatabase = () => {
 	mongoose
 		.connect(process.env.DB_URI, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			useCreateIndex: true,
 		})
-		.then((data) => {
-			console.log(
-				`Mongodb connected with server: ${data.connection.host}`
-			)
-		})
+		.then((con) =>
+			console.log(`Database Connected to E-Commerce Collection ✅✅✅ `)
+		)
+		.catch((err) => console.log(err))
 }
-
-module.exports = connectDatabase
