@@ -17,6 +17,11 @@ const userSchema = new mongoose.Schema({
 		unique: true,
 		validate: [validator.isEmail, "Please Enter a valid Email"],
 	},
+	phone: {
+		type: Number,
+		required: [false, "Please Enter Your Phone"],
+		unique: true,
+	},
 	password: {
 		type: String,
 		required: [true, "Please Enter Your Password"],
@@ -26,11 +31,11 @@ const userSchema = new mongoose.Schema({
 	avatar: {
 		public_id: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		url: {
 			type: String,
-			required: true,
+			required: false,
 		},
 	},
 	role: {
@@ -46,6 +51,7 @@ const userSchema = new mongoose.Schema({
 	resetPasswordExpire: Date,
 })
 
+//save hashed before getting into db
 userSchema.pre("save", async function (next) {
 	if (!this.isModified("password")) {
 		next()
@@ -62,7 +68,6 @@ userSchema.methods.getJWTToken = function () {
 }
 
 // Compare Password
-
 userSchema.methods.comparePassword = async function (password) {
 	return await bcrypt.compare(password, this.password)
 }
