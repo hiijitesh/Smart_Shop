@@ -10,7 +10,7 @@
         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && npm install --prefix frontend && npm run build --prefix frontend",
         "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
         "lint-and-fix": "eslint . --ext .js --fix",
-        "format": "prettier --write ."
+        "format": "prettier --write . --list-different"
     },
     "author": "",
     "license": "ISC",
